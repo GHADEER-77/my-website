@@ -1,0 +1,2700 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منصة نُخبة | حجز المطاعم والمقاهي الفاخرة</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/*=====================================================
+GENERAL
+=====================================================*/
+○{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: "Cairo", sans-serif;
+background: #f7f3ec;
+color: #40372f;
+line-height: 1.8;
+}
+button,
+input,
+select {
+font-family: inherit;
+}
+button {
+cursor: pointer;
+}
+img {
+max-width: 100%;
+display: block;
+}
+
+/* =====================================================
+TOP INFO
+=====================================================*/
+.top-info {
+background: #59654b;
+color: #f7f4ed;
+text-align: center;
+padding: 9px 15px;
+font-size: 12px;
+font-weight: 600;
+}
+.top-info span {
+color: #ead6aa;
+font-weight: 800;
+}
+
+/* =====================================================
+HEADER
+=====================================================*/
+header {
+background: rgba(255, 253, 249, 0.96);
+backdrop-filter: blur(14px);
+position: sticky;
+top: 0;
+z-index: 1000;
+border-bottom: 1px solid #e8dfd2;
+box-shadow: 0 4px 20px rgba(70, 55, 40, 0.05);
+}
+.navbar {
+max-width: 1300px;
+margin: auto;
+min-height: 78px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+padding: 10px 20px;
+}
+.logo {
+color: #4c5740;
+font-size: 25px;
+font-weight: 900;
+cursor: pointer;
+display: flex;
+align-items: center;
+gap: 8px;
+white-space: nowrap;
+}
+.logo-icon {
+font-size: 24px;
+}
+.logo span {
+color: #a88650;
+font-size: 11px;
+background: #f3ecdf;
+border: 1px solid #dfcfb5;
+padding: 2px 9px;
+border-radius: 20px;
+}
+nav {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 3px;
+flex-wrap: wrap;
+}
+nav button {
+border: none;
+background: transparent;
+color: #665d55;
+padding: 8px 11px;
+border-radius: 10px;
+font-size: 13px;
+font-weight: 700;
+transition: 0.25s;
+}
+nav button:hover {
+background: #edf0e8;
+color: #5e6c4d;
+}
+
+/* =====================================================
+PAGES
+=====================================================*/
+.page {
+display: none;
+min-height: 70vh;
+}
+.page.active {
+display: block;
+}
+.page-back {
+max-width: 1250px;
+margin: auto;
+padding: 24px 20px 0;
+}
+.back-btn {
+border: 1px solid #ddd3c5;
+background: #fffdf9;
+color: #5f584f;
+padding: 8px 19px;
+border-radius: 11px;
+font-weight: 700;
+transition: 0.2s;
+}
+.back-btn:hover {
+background: #687657;
+color: white;
+border-color: #687657;
+}
+
+/* =====================================================
+BUTTONS
+=====================================================*/
+.main-btn {
+border: none;
+background: linear-gradient(135deg, #71805f, #59664b);
+color: white;
+padding: 12px 24px;
+border-radius: 12px;
+font-size: 14px;
+font-weight: 800;
+transition: 0.3s;
+box-shadow: 0 7px 18px rgba(89, 102, 75, 0.18);
+}
+.main-btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 10px 24px rgba(89, 102, 75, 0.28);
+}
+.secondary-btn {
+border: 1px solid #cdb994;
+background: #fffdf9;
+color: #927344;
+padding: 12px 24px;
+border-radius: 12px;
+font-weight: 800;
+transition: 0.3s;
+}
+.secondary-btn:hover {
+background: #a88650;
+color: white;
+}
+
+/* =====================================================
+HERO
+=====================================================*/
+.hero {
+min-height: 600px;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+background:
+linear-gradient(
+90deg,
+rgba(255,253,249,0.96),
+rgba(255,253,249,0.79),
+rgba(255,253,249,0.45)
+),
+url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&auto=format&fit=crop&q=80")
+center/cover no-repeat;
+border-bottom: 1px solid #e7ded1;
+}
+.hero-content {
+max-width: 900px;
+padding: 50px 20px;
+}
+.hero-badge {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: rgba(239, 235, 223, 0.9);
+border: 1px solid #d9c8a9;
+color: #80673f;
+padding: 7px 18px;
+border-radius: 50px;
+font-size: 13px;
+font-weight: 800;
+margin-bottom: 20px;
+}
+.hero-content h1 {
+color: #3f4935;
+font-size: clamp(34px, 5.5vw, 58px);
+font-weight: 900;
+line-height: 1.25;
+margin-bottom: 15px;
+}
+.hero-content h2 {
+color: #9a7743;
+font-size: clamp(17px, 3vw, 24px);
+font-weight: 800;
+margin-bottom: 18px;
+}
+.hero-content p {
+color: #70675f;
+font-size: 16px;
+max-width: 730px;
+margin: auto auto 30px;
+}
+
+/* =====================================================
+SECTIONS
+=====================================================*/
+.section {
+max-width: 1250px;
+margin: auto;
+padding: 55px 20px;
+}
+.section-title {
+text-align: center;
+margin-bottom: 38px;
+}
+.section-title h2 {
+color: #414a37;
+font-size: 31px;
+font-weight: 900;
+}
+.section-title p {
+color: #837970;
+font-size: 15px;
+margin-top: 6px;
+}
+
+/* =====================================================
+GRIDS
+=====================================================*/
+.grid-3 {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+}
+
+/* =====================================================
+CARDS
+=====================================================*/
+.card {
+background: #fffdf9;
+border-radius: 22px;
+overflow: hidden;
+box-shadow: 0 10px 28px rgba(70, 55, 40, 0.07);
+border: 1px solid #e9dfd2;
+transition: 0.3s;
+display: flex;
+flex-direction: column;
+}
+.card:hover {
+transform: translateY(-6px);
+border-color: #cdb994;
+box-shadow: 0 17px 35px rgba(70, 55, 40, 0.12);
+}
+.card img {
+width: 100%;
+height: 225px;
+object-fit: cover;
+}
+.card-body {
+padding: 22px;
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+.card-body h3 {
+color: #40372f;
+font-size: 20px;
+font-weight: 900;
+margin-bottom: 7px;
+}
+.card-body p {
+color: #80766e;
+font-size: 14px;
+margin-bottom: 20px;
+flex: 1;
+}
+.card-badge {
+display: inline-block;
+align-self: flex-start;
+background: #eef1e8;
+color: #637050;
+font-size: 11px;
+font-weight: 800;
+padding: 5px 11px;
+border-radius: 8px;
+margin-bottom: 11px;
+}
+
+/* =====================================================
+FEATURE STRIP
+=====================================================*/
+.feature-strip {
+max-width: 1100px;
+margin: -45px auto 0;
+position: relative;
+z-index: 3;
+background: #fffdf9;
+border: 1px solid #e8dfd2;
+border-radius: 22px;
+box-shadow: 0 12px 35px rgba(70, 55, 40, 0.09);
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+overflow: hidden;
+}
+.feature-item {
+padding: 24px;
+text-align: center;
+border-left: 1px solid #eee5da;
+}
+.feature-item:last-child {
+border-left: none;
+}
+.feature-item strong {
+display: block;
+color: #526044;
+font-size: 17px;
+margin-bottom: 3px;
+}
+.feature-item span {
+color: #887e75;
+font-size: 12px;
+}
+
+/* =====================================================
+RESTAURANT DETAIL
+=====================================================*/
+.rest-header-card {
+background: #fffdf9;
+border-radius: 24px;
+overflow: hidden;
+box-shadow: 0 10px 30px rgba(70,55,40,0.08);
+border: 1px solid #e8dfd2;
+margin-bottom: 30px;
+}
+.rest-banner {
+height: 350px;
+width: 100%;
+object-fit: cover;
+}
+.rest-header-content {
+padding: 30px;
+}
+.rest-header-content h1 {
+color: #3f4935 !important;
+}
+.menu-section {
+background: #fffdf9;
+padding: 32px;
+border-radius: 24px;
+box-shadow: 0 10px 30px rgba(70,55,40,0.07);
+border: 1px solid #e8dfd2;
+margin-bottom: 30px;
+}
+.menu-section h3 {
+color: #414a37 !important;
+}
+.menu-section > p {
+color: #82786f !important;
+}
+.menu-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-top: 20px;
+}
+.menu-card-item {
+background: #f8f4ed;
+padding: 17px 20px;
+border-radius: 14px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 10px;
+border: 1px solid #e8dfd2;
+}
+.menu-card-item h4 {
+font-size: 15px;
+color: #4e463f;
+}
+.menu-card-item span {
+font-weight: 900;
+color: #9a7743;
+white-space: nowrap;
+}
+
+/* =====================================================
+BOOKING BOX
+=====================================================*/
+.inline-booking-box {
+background: #fffdf9;
+padding: 38px;
+border-radius: 24px;
+box-shadow: 0 12px 32px rgba(70,55,40,0.08);
+border: 1px solid #e4d9ca;
+}
+.booking-heading {
+padding-bottom: 24px;
+border-bottom: 1px solid #e9e0d5;
+margin-bottom: 25px;
+}
+.booking-label {
+color: #a27e49;
+font-size: 12px;
+font-weight: 900;
+}
+.booking-heading h3 {
+color: #414a37;
+font-size: 27px;
+margin: 3px 0;
+}
+.booking-heading p {
+color: #827970;
+font-size: 14px;
+}
+.booking-section-title {
+display: flex;
+align-items: center;
+gap: 12px;
+margin: 25px 0 15px;
+}
+.booking-section-title > span {
+width: 33px;
+height: 33px;
+border-radius: 50%;
+background: #687657;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 12px;
+font-weight: 900;
+}
+.booking-section-title div {
+display: flex;
+flex-direction: column;
+}
+.booking-section-title strong {
+color: #443b34;
+font-size: 15px;
+}
+.booking-section-title small {
+color: #93887f;
+font-size: 11px;
+}
+
+/* =====================================================
+PACKAGE SELECTOR
+=====================================================*/
+.booking-package-options {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 12px;
+}
+.booking-package-option {
+border: 1px solid #e2d8ca;
+background: #fffdf9;
+border-radius: 17px;
+padding: 15px;
+display: flex;
+align-items: center;
+gap: 10px;
+text-align: right;
+transition: 0.2s;
+position: relative;
+}
+.booking-package-option:hover {
+border-color: #b69a6b;
+background: #faf7f1;
+}
+.booking-package-option.active {
+border: 2px solid #687657;
+background: #f1f4ed;
+}
+.option-icon {
+width: 43px;
+height: 43px;
+flex-shrink: 0;
+border-radius: 13px;
+background: #eee8de;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 20px;
+}
+.option-content {
+display: flex;
+flex-direction: column;
+flex: 1;
+}
+.option-content strong {
+color: #453d36;
+font-size: 13px;
+}
+.option-content small {
+color: #6c7959;
+font-size: 11px;
+font-weight: 800;
+}
+.option-check {
+opacity: 0;
+color: #687657;
+font-weight: 900;
+}
+.booking-package-option.active .option-check {
+opacity: 1;
+}
+
+/* =====================================================
+FORM
+=====================================================*/
+.form-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 18px;
+}
+.form-group {
+display: flex;
+flex-direction: column;
+gap: 7px;
+}
+.form-group label {
+font-weight: 800;
+color: #5e554d;
+font-size: 13px;
+}
+.form-group input,
+.form-group select {
+width: 100%;
+padding: 13px 15px;
+border: 1px solid #ded4c7;
+border-radius: 12px;
+outline: none;
+background: #fbf8f3;
+color: #433b34;
+font-size: 14px;
+transition: 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus {
+border-color: #8b9a77;
+box-shadow: 0 0 0 3px rgba(104,118,87,0.09);
+}
+
+/* =====================================================
+GUEST COUNTER
+=====================================================*/
+.guest-counter {
+display: flex;
+align-items: center;
+gap: 7px;
+}
+.guest-counter button {
+width: 43px;
+height: 45px;
+border: 1px solid #ddd3c5;
+background: #f3eee6;
+color: #687657;
+border-radius: 11px;
+font-size: 21px;
+font-weight: 900;
+}
+.guest-counter input {
+text-align: center;
+}
+
+/* =====================================================
+PRICE SUMMARY
+=====================================================*/
+.price-summary {
+background: #f6f2ea;
+border: 1px solid #e3d9cb;
+border-radius: 20px;
+padding: 22px;
+margin-top: 25px;
+}
+.price-row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 15px;
+padding: 6px 0;
+color: #81776e;
+font-size: 13px;
+}
+.price-row strong {
+color: #453c34;
+}
+.price-divider {
+height: 1px;
+background: #dfd5c8;
+margin: 12px 0;
+}
+.price-total {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.price-total span {
+color: #433a33;
+font-weight: 900;
+}
+.price-total strong {
+color: #687657;
+font-size: 29px;
+font-weight: 900;
+}
+.booking-confirm-btn {
+width: 100%;
+margin-top: 20px;
+}
+
+/* =====================================================
+PACKAGE PAGE
+=====================================================*/
+.package-card {
+background: #fffdf9;
+border: 1px solid #e5dbce;
+border-radius: 25px;
+padding: 30px 25px;
+text-align: center;
+box-shadow: 0 12px 30px rgba(72,58,42,0.07);
+transition: 0.3s;
+position: relative;
+overflow: hidden;
+}
+.package-card:hover {
+transform: translateY(-7px);
+box-shadow: 0 18px 40px rgba(72,58,42,0.12);
+border-color: #b59a6c;
+}
+.featured-package {
+border: 2px solid #b59a6c;
+transform: translateY(-8px);
+}
+.featured-package:hover {
+transform: translateY(-14px);
+}
+.package-icon {
+width: 70px;
+height: 70px;
+margin: 0 auto 15px;
+border-radius: 22px;
+background: #f0ebe2;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 31px;
+}
+.package-badge {
+display: inline-block;
+background: #edf1e8;
+color: #637050;
+border-radius: 50px;
+padding: 6px 14px;
+font-size: 11px;
+font-weight: 900;
+margin-bottom: 14px;
+}
+.package-card h3 {
+color: #40372f;
+font-size: 20px;
+margin-bottom: 13px;
+}
+.package-price {
+margin-bottom: 16px;
+}
+.package-price strong {
+color: #687657;
+font-size: 39px;
+font-weight: 900;
+}
+.package-price span {
+color: #837970;
+font-size: 12px;
+font-weight: 800;
+}
+.package-card p {
+color: #81766e;
+font-size: 13px;
+min-height: 65px;
+}
+.package-info {
+display: flex;
+flex-direction: column;
+gap: 7px;
+margin: 19px 0;
+text-align: right;
+color: #5e6b50;
+font-size: 13px;
+font-weight: 700;
+}
+.package-card .main-btn {
+width: 100%;
+}
+
+/* =====================================================
+TICKET
+=====================================================*/
+.ticket-wrapper {
+max-width: 850px;
+margin: 25px auto 60px;
+}
+.ticket {
+background: #fffdf9;
+border-radius: 25px;
+overflow: hidden;
+box-shadow: 0 15px 35px rgba(70,55,40,0.1);
+border: 1px solid #ddcfba;
+}
+.ticket-top {
+background: #59654b;
+color: white;
+padding: 25px 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.ticket-brand {
+font-size: 25px;
+font-weight: 900;
+}
+.ticket-brand span {
+color: #e5ce9e;
+}
+.ticket-confirmed {
+background: rgba(255,255,255,0.12);
+padding: 7px 15px;
+border-radius: 10px;
+font-weight: 800;
+color: #f2eadb;
+}
+.ticket-body {
+padding: 30px;
+}
+.ticket-info-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 13px;
+margin-top: 20px;
+}
+.ticket-info {
+background: #f7f3ec;
+padding: 14px;
+border-radius: 12px;
+border: 1px solid #e8dfd2;
+}
+.ticket-info small {
+display: block;
+color: #91867c;
+font-size: 11px;
+}
+.ticket-info strong {
+color: #40372f;
+font-size: 14px;
+}
+.ticket-bottom {
+border-top: 2px dashed #ddd2c4;
+padding: 25px 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: #faf7f1;
+}
+.fake-qr {
+width: 85px;
+height: 85px;
+background:
+linear-gradient(90deg,#3f4638 10px,transparent 10px) 0 0/15px 15px,
+linear-gradient(#3f4638 10px,transparent 10px) 0 0/15px 15px,
+#fff;
+border: 4px solid #fff;
+box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* =====================================================
+FOOTER
+=====================================================*/
+footer {
+background: #566149;
+color: #e8e4db;
+padding: 45px 20px 20px;
+margin-top: 60px;
+}
+.footer-content {
+max-width: 1250px;
+margin: auto;
+text-align: center;
+}
+.footer-content h3 {
+color: #f0ddba;
+margin-bottom: 8px;
+font-weight: 900;
+font-size: 21px;
+}
+.footer-nav {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+flex-wrap: wrap;
+margin: 25px 0;
+padding-top: 20px;
+border-top: 1px solid rgba(255,255,255,0.12);
+}
+.footer-nav a {
+color: #eee9df;
+text-decoration: none;
+font-size: 13px;
+font-weight: 600;
+transition: 0.2s;
+}
+.footer-nav a:hover {
+color: #efd9ae;
+}
+.footer-bottom {
+margin-top: 20px;
+font-size: 12px;
+color: #d0cabb;
+}
+
+/* =====================================================
+RESPONSIVE
+=====================================================*/
+@media (max-width: 1000px) {
+.navbar {
+flex-direction: column;
+padding-bottom: 15px;
+}
+nav {
+width: 100%;
+}
+.grid-3 {
+grid-template-columns: repeat(2, 1fr);
+}
+.booking-package-options {
+grid-template-columns: 1fr;
+}
+.featured-package {
+transform: none;
+}
+.featured-package:hover {
+transform: translateY(-7px);
+}
+}
+
+@media (max-width: 700px) {
+.grid-3,
+.form-grid,
+.menu-grid,
+.ticket-info-grid {
+grid-template-columns: 1fr;
+}
+.feature-strip {
+grid-template-columns: 1fr;
+margin: 20px;
+}
+.feature-item {
+border-left: none;
+border-bottom: 1px solid #eee5da;
+}
+.feature-item:last-child {
+border-bottom: none;
+}
+.hero {
+min-height: 540px;
+}
+.hero-content h1 {
+font-size: 34px;
+}
+.rest-banner {
+height: 250px;
+}
+.inline-booking-box {
+padding: 24px 18px;
+}
+.ticket-top {
+flex-direction: column;
+gap: 15px;
+text-align: center;
+}
+.ticket-bottom {
+flex-direction: column;
+gap: 20px;
+}
+.ticket-bottom > div:last-child {
+text-align: center !important;
+}
+nav button {
+font-size: 12px;
+padding: 7px 8px;
+}
+}
+
+@media print {
+header,
+.top-info,
+footer,
+.page-back,
+.ticket-actions {
+display: none !important;
+}
+.page {
+display: none !important;
+}
+#ticketPage {
+display: block !important;
+}
+body {
+background: white;
+color: black;
+}
+.ticket {
+border: 1px solid #333;
+box-shadow: none;
+}
+.ticket-top {
+background: #59654b;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!--=====================================================
+TOP BANNER
+=====================================================-->
+<div class="top-info">
+مشروع مادة: مبادئ برمجة صفحات الإنترنت |
+الشعبة: <span>1</span> |
+إعداد الطالبات:
+<span>طيف مجرشي</span>
+و
+<span>غدير الحربي</span>
+</div>
+
+<!-- =====================================================
+HEADER
+===================================================== -->
+<header>
+<div class="navbar">
+<div class="logo" onclick="showPage('homePage')">
+🍽️ منصة نُخبة
+<span>VIP</span>
+</div>
+<nav>
+<button onclick="showPage('homePage')">
+الرئيسية
+</button>
+<button onclick="showPage('citiesPage')">
+المدن والواجهات
+</button>
+<button onclick="showPage('restaurantsPage')">
+المطاعم والمنيو
+</button>
+<button onclick="showPage('dessertsPage')">
+مقاهي الحلى والقهوة 🍰
+</button>
+<button onclick="showPage('packagesPage')">
+عروض الحجز الخاص
+</button>
+<button onclick="showPage('aboutPage')">
+من نحن
+</button>
+<button onclick="showPage('reviewsPage')">
+تقييمات الضيوف
+</button>
+<button onclick="showPage('contactPage')">
+تواصل معنا
+</button>
+</nav>
+</div>
+</header>
+
+<!-- =====================================================
+HOME
+===================================================== -->
+<main id="homePage" class="page active">
+<section class="hero">
+<div class="hero-content">
+<div class="hero-badge">
+✨ تجربة طهي فاخر وحلى استثنائية
+</div>
+<h1>
+بوابتك لحجز أرقى
+المطاعم والمقاهي السعودية
+</h1>
+<h2>
+اكتشف المكان المناسب واحجز تجربتك بكل سهولة
+</h2>
+<p>
+تصفح المطاعم والمقاهي، تعرف على المنيو،
+اختر باقة الحجز المناسبة لك،
+ثم أكمل حجزك واحصل على تذكرتك الإلكترونية فورًا.
+</p>
+<div style="display:flex; gap:13px; justify-content:center; flex-wrap:wrap;">
+<button
+class="main-btn"
+onclick="showPage('restaurantsPage')">
+استكشف المطاعم 🍽️
+</button>
+<button
+class="secondary-btn"
+onclick="showPage('packagesPage')">
+شاهد باقات الحجز ✨
+</button>
+</div>
+</div>
+</section>
+
+<!-- FEATURE STRIP -->
+<div class="feature-strip">
+<div class="feature-item">
+<strong>🍽️ أماكن مميزة</strong>
+<span>
+مطاعم ومقاهي مختارة بعناية
+</span>
+</div>
+<div class="feature-item">
+<strong>🎟️ حجز سهل وسريع</strong>
+<span>
+أكمل بياناتك واحصل على تذكرتك
+</span>
+</div>
+<div class="feature-item">
+<strong>✨ باقات متنوعة</strong>
+<span>
+اختر الباقة حسب تجربتك وعدد الضيوف
+</span>
+</div>
+</div>
+
+<section class="section">
+<div class="section-title">
+<h2>
+🍽️ المطاعم ومقاهي الحلى الأكثر طلبًا
+</h2>
+<p>
+اختر المكان للتعرف على أجوائه والمنيو ثم الحجز
+</p>
+</div>
+<div
+class="grid-3"
+id="homeFeaturedRestaurants">
+</div>
+</section>
+</main>
+
+<!-- =====================================================
+CITIES
+===================================================== -->
+<section id="citiesPage" class="page">
+<div class="page-back">
+<button
+class="back-btn"
+onclick="goBackPage()">
+← رجوع
+</button>
+</div>
+<div class="section">
+<div class="section-title">
+<h2>
+🏙️ المدن والواجهات
+</h2>
+<p>
+اكتشف الأماكن الفاخرة المتاحة في مدن المملكة
+</p>
+</div>
+<div
+class="grid-3"
+id="citiesContainer">
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+RESTAURANTS
+===================================================== -->
+<section id="restaurantsPage" class="page">
+<div class="page-back">
+<button
+class="back-btn"
+onclick="goBackPage()">
+← رجوع
+</button>
+</div>
+<div class="section">
+<div class="section-title">
+<h2>
+🍽️ دليل مطاعم نُخبة
+</h2>
+<p>
+استعرض المطاعم والمنيو واختر المكان المناسب لك
+</p>
+</div>
+<div
+class="grid-3"
+id="restaurantsContainer">
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+DESSERTS
+===================================================== -->
+<section id="dessertsPage" class="page">
+<div class="page-back">
+<button
+class="back-btn"
+onclick="goBackPage()">
+← رجوع
+</button>
+</div>
+<div class="section">
+<div class="section-title">
+<h2>
+🍰 مقاهي الحلى والقهوة ☕
+</h2>
+<p>
+استكشف أجمل وجهات الحلى والقهوة في المملكة
+</p>
+</div>
+<div
+class="grid-3"
+id="dessertsContainer">
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+RESTAURANT DETAILS
+===================================================== -->
+<section id="restaurantDetailPage" class="page">
+<div class="page-back">
+<button
+class="back-btn"
+onclick="goBackPage()">
+← رجوع للقائمة
+</button>
+</div>
+
+<div class="section">
+<div
+class="rest-header-card"
+id="restHeaderCard">
+</div>
+
+<!-- MENU -->
+<div class="menu-section">
+<h3 style="
+font-size:24px;
+font-weight:900;
+display:flex;
+align-items:center;
+gap:8px;
+">
+📋 قائمة الطعام والمنيو
+</h3>
+<p style="
+font-size:14px;
+margin-top:4px;
+">
+أشهر الأصناف والأسعار التقديرية المقدمة في المكان
+</p>
+<div
+class="menu-grid"
+id="menuItemsGrid">
+</div>
+</div>
+
+<!-- BOOKING -->
+<div class="inline-booking-box">
+
+<div class="booking-heading">
+<span class="booking-label">
+حجزك الخاص
+</span>
+<h3>
+🥂 احجز طاولتك الآن
+</h3>
+<p>
+اختر الباقة وعدد الأشخاص،
+وسيتم حساب السعر تلقائيًا.
+</p>
+</div>
+
+<!-- PACKAGE -->
+<div class="booking-section-title">
+<span>01</span>
+<div>
+<strong>
+اختر باقة الحجز
+</strong>
+<small>
+حدد التجربة المناسبة لك
+</small>
+</div>
+</div>
+
+<div class="booking-package-options">
+
+<button
+type="button"
+class="booking-package-option active"
+id="package-family"
+onclick="chooseBookingPackage('family')">
+<span class="option-icon">
+👨‍👩‍👧‍👦
+</span>
+<span class="option-content">
+<strong>
+العوائل VIP
+</strong>
+<small>
+200 ريال للشخص
+</small>
+</span>
+<span class="option-check">
+✓
+</span>
+</button>
+
+<button
+type="button"
+class="booking-package-option"
+id="package-vip"
+onclick="chooseBookingPackage('vip')">
+<span class="option-icon">
+👑
+</span>
+<span class="option-content">
+<strong>
+كبار الشخصيات
+</strong>
+<small>
+300 ريال للشخص
+</small>
+</span>
+<span class="option-check">
+✓
+</span>
+</button>
+
+<button
+type="button"
+class="booking-package-option"
+id="package-terrace"
+onclick="chooseBookingPackage('terrace')">
+<span class="option-icon">
+🌿
+</span>
+<span class="option-content">
+<strong>
+التراس والجلسات الخارجية
+</strong>
+<small>
+150 ريال للشخص
+</small>
+</span>
+<span class="option-check">
+✓
+</span>
+</button>
+</div>
+
+<!-- DATA -->
+<div class="booking-section-title">
+<span>02</span>
+<div>
+<strong>
+بيانات الحجز
+</strong>
+<small>
+أدخل معلومات الحضور
+</small>
+</div>
+</div>
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>
+الاسم الكامل
+</label>
+<input
+type="text"
+id="inlineGuestName"
+placeholder="اكتب اسمك الكامل">
+</div>
+
+<div class="form-group">
+<label>
+رقم الجوال
+</label>
+<input
+type="tel"
+id="inlineGuestPhone"
+placeholder="05xxxxxxxx">
+</div>
+
+<div class="form-group">
+<label>
+تاريخ الحجز
+</label>
+<input
+type="date"
+id="inlineCheckInDate">
+</div>
+
+<div class="form-group">
+<label>
+ساعة الحضور
+</label>
+<input
+type="time"
+id="inlineCheckInTime">
+</div>
+
+<div class="form-group">
+<label>
+عدد الأشخاص
+</label>
+<div class="guest-counter">
+<button
+type="button"
+onclick="changeGuests(-1)">
+−
+</button>
+<input
+type="number"
+id="inlineGuestCount"
+value="2"
+min="1"
+oninput="calculateInlineTotal()">
+<button
+type="button"
+onclick="changeGuests(1)">
++
+</button>
+</div>
+</div>
+</div>
+
+<!-- SUMMARY -->
+<div class="price-summary">
+<div class="price-row">
+<span>
+الباقة المختارة
+</span>
+<strong id="selectedPackageName">
+العوائل VIP
+</strong>
+</div>
+
+<div class="price-row">
+<span>
+سعر الشخص
+</span>
+<strong id="selectedPackagePrice">
+200 ريال
+</strong>
+</div>
+
+<div class="price-row">
+<span>
+عدد الأشخاص
+</span>
+<strong>
+<span id="summaryGuestCount">
+2
+</span>
+أشخاص
+</strong>
+</div>
+
+<div class="price-divider"></div>
+
+<div class="price-total">
+<span>
+إجمالي الحجز
+</span>
+<strong id="inlineTotalPrice">
+400 ريال
+</strong>
+</div>
+</div>
+
+<button
+class="main-btn booking-confirm-btn"
+onclick="createInlineTicket()">
+تأكيد الحجز وإصدار التذكرة 🎟️
+</button>
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+PACKAGES
+===================================================== -->
+<section id="packagesPage" class="page">
+<div class="page-back">
+<button
+class="back-btn"
+onclick="goBackPage()">
+← رجوع
+</button>
+</div>
+
+<div class="section">
+<div class="section-title">
+<h2>
+✨ باقات الحجز الخاص
+</h2>
+<p>
+اختر الباقة المناسبة لك، والسعر يُحسب حسب عدد الأشخاص
+</p>
+</div>
+
+<div class="grid-3">
+
+<!-- FAMILY -->
+<div class="package-card">
+<div class="package-icon">
+👨‍👩‍👧‍👦
+</div>
+<span class="package-badge">
+الأكثر طلبًا
+</span>
+<h3>
+باقة العوائل VIP
+</h3>
+<div class="package-price">
+<strong>
+200
+</strong>
+<span>
+ريال / للشخص
+</span>
+</div>
+<p>
+طاولة خاصة واسعة مع جلسة هادئة
+وضيافة قهوة وتمر فاخر عند الوصول.
+</p>
+<div class="package-info">
+<span>
+✓ جلسة خاصة
+</span>
+<span>
+✓ ضيافة قهوة وتمر
+</span>
+<span>
+✓ مناسبة للعوائل
+</span>
+</div>
+<button
+class="main-btn"
+onclick="selectPackageAndBrowse('family')">
+اختيار الباقة والحجز
+</button>
+</div>
+
+<!-- VIP -->
+<div class="package-card featured-package">
+<div class="package-icon">
+👑
+</div>
+<span class="package-badge">
+تجربة VIP
+</span>
+<h3>
+باقة كبار الشخصيات
+</h3>
+<div class="package-price">
+<strong>
+300
+</strong>
+<span>
+ريال / للشخص
+</span>
+</div>
+<p>
+تجربة فاخرة بإطلالة مميزة مع خدمة
+نادل خاص ومشروب ترحيبي فاخر لكل ضيف.
+</p>
+<div class="package-info">
+<span>
+✓ خدمة نادل خاص
+</span>
+<span>
+✓ مشروب ترحيبي
+</span>
+<span>
+✓ إطلالة مميزة
+</span>
+</div>
+<button
+class="main-btn"
+onclick="selectPackageAndBrowse('vip')">
+اختيار الباقة والحجز
+</button>
+</div>
+
+<!-- TERRACE -->
+<div class="package-card">
+<div class="package-icon">
+🌿
+</div>
+<span class="package-badge">
+أجواء خارجية
+</span>
+<h3>
+باقة التراس والجلسات الخارجية
+</h3>
+<div class="package-price">
+<strong>
+150
+</strong>
+<span>
+ريال / للشخص
+</span>
+</div>
+<p>
+حجز جلسة خارجية بإطلالة ساحرة
+وأجواء هادئة وتجربة لا تُنسى.
+</p>
+<div class="package-info">
+<span>
+✓ جلسة خارجية
+</span>
+<span>
+✓ إطلالة مميزة
+</span>
+<span>
+✓ أجواء هادئة
+</span>
+</div>
+<button
+class="main-btn"
+onclick="selectPackageAndBrowse('terrace')">
+اختيار الباقة والحجز
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+TICKET
+===================================================== -->
+<section id="ticketPage" class="page">
+<div class="page-back">
+<button
+class="back-btn"
+onclick="goBackPage()">
+← رجوع
+</button>
+</div>
+
+<div class="ticket-wrapper">
+<div class="ticket">
+
+<div class="ticket-top">
+<div class="ticket-brand">
+منصة نُخبة
+<span>VIP</span>
+</div>
+<div class="ticket-confirmed">
+✓ حجز مؤكد
+</div>
+</div>
+
+<div class="ticket-body">
+<div style="
+display:flex;
+justify-content:space-between;
+border-bottom:1px dashed #ddd2c4;
+padding-bottom:15px;
+">
+<div>
+<small style="color:#91867c;">
+رقم التذكرة
+</small>
+<br>
+<strong
+id="ticketBookingNumber"
+style="
+color:#40372f;
+font-size:18px;
+">
+-
+</strong>
+</div>
+
+<div>
+<small style="color:#91867c;">
+حالة الحجز
+</small>
+<br>
+<strong style="color:#687657;">
+مؤكد تلقائيًا
+</strong>
+</div>
+</div>
+
+<div class="ticket-info-grid">
+
+<div class="ticket-info">
+<small>اسم الضيف</small>
+<strong id="ticketName">-</strong>
+</div>
+
+<div class="ticket-info">
+<small>اسم المكان</small>
+<strong id="ticketRestaurant">-</strong>
+</div>
+
+<div class="ticket-info">
+<small>المدينة</small>
+<strong id="ticketCity">-</strong>
+</div>
+
+<div class="ticket-info">
+<small>الباقة المختارة</small>
+<strong id="ticketPackage">-</strong>
+</div>
+
+<div class="ticket-info">
+<small>سعر الشخص</small>
+<strong id="ticketPersonPrice">-</strong>
+</div>
+
+<div class="ticket-info">
+<small>تاريخ الحضور</small>
+<strong id="ticketDate">-</strong>
+</div>
+
+<div class="ticket-info">
+<small>ساعة الحضور</small>
+<strong id="ticketTime">-</strong>
+</div>
+
+<div class="ticket-info">
+<small>عدد الأشخاص</small>
+<strong id="ticketGuests">-</strong>
+</div>
+
+<div class="ticket-info">
+<small>رقم التواصل</small>
+<strong id="ticketPhone">-</strong>
+</div>
+</div>
+</div>
+
+<div class="ticket-bottom">
+<div class="fake-qr"></div>
+<div style="text-align:left;">
+<small style="color:#91867c;">
+إجمالي الحجز
+</small>
+<strong
+id="ticketTotal"
+style="
+display:block;
+color:#687657;
+font-size:25px;
+">
+-
+</strong>
+</div>
+</div>
+</div>
+
+<div
+style="
+display:flex;
+gap:12px;
+justify-content:center;
+margin-top:25px;
+"
+class="ticket-actions">
+<button
+class="main-btn"
+onclick="window.print()">
+🖨️ طباعة أو حفظ التذكرة
+</button>
+<button
+class="secondary-btn"
+onclick="showPage('restaurantsPage')">
+حجز مكان آخر
+</button>
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+ABOUT
+===================================================== -->
+<section id="aboutPage" class="page">
+<div class="page-back">
+<button
+class="back-btn"
+onclick="goBackPage()">
+← رجوع
+</button>
+</div>
+
+<div class="section">
+<div
+class="inline-booking-box"
+style="text-align:center;">
+<h2 style="color:#414a37;">
+عن منصة نُخبة
+</h2>
+<p style="
+color:#81776e;
+margin-top:10px;
+">
+منصة نُخبة هي نظام ويب متطور يهدف
+لتسهيل عملية اكتشاف وحجز المطاعم
+ومقاهي الحلى الفاخرة في مدن المملكة
+العربية السعودية وتوفير تذاكر حجز فورية.
+</p>
+
+<div style="
+background:#f7f3ec;
+padding:25px;
+border-radius:16px;
+margin-top:25px;
+text-align:right;
+border:1px solid #e5dbce;
+">
+<p>
+<strong>اسم المشروع:</strong>
+منصة نُخبة لحجز المطاعم والمقاهي الفاخرة
+</p>
+<p>
+<strong>المقرر:</strong>
+مبادئ برمجة صفحات الإنترنت
+</p>
+<p>
+<strong>إعداد الطالبات:</strong>
+طيف مجرشي & غدير الحربي
+</p>
+<p>
+<strong>الشعبة:</strong>
+شعبة 1
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+REVIEWS
+===================================================== -->
+<section id="reviewsPage" class="page">
+<div class="page-back">
+<button
+class="back-btn"
+onclick="goBackPage()">
+← رجوع
+</button>
+</div>
+
+<div class="section">
+<div class="section-title">
+<h2>
+⭐ آراء الضيوف والعملاء
+</h2>
+<p>
+انطباعات من استخدموا المنصة لحجز طاولاتهم
+</p>
+</div>
+
+<div class="grid-3">
+
+<div class="card card-body">
+⭐⭐⭐⭐⭐
+<p style="margin-top:12px;">
+فكرة وجود صور المطاعم والحلى
+داخل نفس الصفحة ممتازة وسلسة جدًا.
+</p>
+<strong>
+سارة الخالد
+</strong>
+</div>
+
+<div class="card card-body">
+⭐⭐⭐⭐⭐
+<p style="margin-top:12px;">
+التصميم مرتب والتذكرة الإلكترونية
+سهلة وواضحة عند إتمام الحجز.
+</p>
+<strong>
+محمد العتيبي
+</strong>
+</div>
+
+<div class="card card-body">
+⭐⭐⭐⭐⭐
+<p style="margin-top:12px;">
+تنوع المطاعم والمقاهي والباقات
+أعطى المنصة تجربة جميلة ومميزة.
+</p>
+<strong>
+أريج السلمان
+</strong>
+</div>
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+CONTACT
+===================================================== -->
+<section id="contactPage" class="page">
+<div class="page-back">
+<button
+class="back-btn"
+onclick="goBackPage()">
+← رجوع
+</button>
+</div>
+
+<div class="section">
+<div
+class="inline-booking-box"
+style="text-align:center;">
+<h2 style="color:#414a37;">
+📞 تواصل معنا
+</h2>
+<p style="color:#81776e;">
+يسعدنا تواصلكم بخصوص الاستفسارات والملاحظات
+</p>
+<p style="margin-top:20px;">
+📧 البريد الإلكتروني:
+info@nukhba-elite.sa
+</p>
+<p>
+📱 الجوال:
+0500000000
+</p>
+<p>
+🇸🇦 المملكة العربية السعودية
+</p>
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+<footer>
+<div class="footer-content">
+<h3>
+🍽️ منصة نُخبة للحجوزات الفاخرة VIP
+</h3>
+<p>
+اسم المقرر: مبادئ برمجة صفحات الويب |
+إعداد الطالبات: طيف مجرشي و غدير الحربي |
+شعبة 1
+</p>
+
+<div class="footer-nav">
+<a href="javascript:void(0)"
+onclick="showPage('homePage')">
+الرئيسية
+</a>
+<a href="javascript:void(0)"
+onclick="showPage('aboutPage')">
+من نحن
+</a>
+<a href="javascript:void(0)"
+onclick="showPage('restaurantsPage')">
+دليل المطاعم
+</a>
+<a href="javascript:void(0)"
+onclick="showPage('dessertsPage')">
+مقاهي الحلى
+</a>
+<a href="javascript:void(0)"
+onclick="showPage('contactPage')">
+اتصل بنا
+</a>
+<a href="javascript:void(0)"
+onclick="alert('سياسة الخصوصية: جميع البيانات المحفوظة تستخدم فقط لأغراض الحجز.')">
+سياسة الخصوصية
+</a>
+<a href="javascript:void(0)"
+onclick="alert('الشروط والأحكام: يتوجب الحضور في الوقت المحدد للحجز لضمان الطاولة.')">
+الشروط والأحكام
+</a>
+</div>
+
+<div class="footer-bottom">
+جميع الحقوق محفوظة © 2026 منصة نُخبة
+مشروع برمجة صفحات الإنترنت
+</div>
+</div>
+</footer>
+
+<script>
+
+/* =====================================================
+NAVIGATION
+=====================================================*/
+let pageHistory = ["homePage"];
+
+function showPage(pageId) {
+const currentPage =
+document.querySelector(".page.active");
+if (
+currentPage &&
+currentPage.id !== pageId
+) {
+pageHistory.push(pageId);
+}
+
+document
+.querySelectorAll(".page")
+.forEach(page => {
+page.classList.remove("active");
+});
+
+const target =
+document.getElementById(pageId);
+
+if (target) {
+target.classList.add("active");
+window.scrollTo({
+top: 0,
+behavior: "smooth"
+});
+}
+}
+
+function goBackPage() {
+if (pageHistory.length > 1) {
+pageHistory.pop();
+const previousPage =
+pageHistory[pageHistory.length - 1];
+document
+.querySelectorAll(".page")
+.forEach(page => {
+page.classList.remove("active");
+});
+document
+.getElementById(previousPage)
+.classList.add("active");
+window.scrollTo({
+top: 0,
+behavior: "smooth"
+});
+}
+}
+
+/* =====================================================
+PLACES DATA
+=====================================================*/
+const places = [
+{
+id: "piatto",
+type: "restaurant",
+name: "مطعم بياتو (Piatto)",
+category: "المطبخ الإيطالي الفاخر",
+city: "الرياض",
+image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&auto=format&fit=crop&q=80",
+desc: "أشهر المطاعم الإيطالية الفاخرة في المملكة، يشتهر بالبيتزا المحضرة بالحطب، والباستا الطازجة، وأجواء الضيافة الإيطالية الدافئة.",
+menu: [
+{ item: "بيتزا التاكانو بالحطب مع التروفل", price: "88 ريال" },
+{ item: "فتوتشيني ألبيرو بالدجاج والمشروم", price: "76 ريال" },
+{ item: "شوربة المشروم البري بالكريمة", price: "42 ريال" },
+{ item: "جيلاتو إيطالي طازج مع تشيز كيك", price: "48 ريال" }
+]
+},
+
+{
+id: "entrecote",
+type: "restaurant",
+name: "انتركوت كافيه دي باريس",
+category: "المطبخ الفرنسي والستيك",
+city: "الرياض",
+image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop&q=80",
+desc: "أحد أشهر المطاعم الفرنسية الفاخرة المتخصصة بشرائح ستيك الإنتركوت الطرية مع صلصتهم السرية الشهيرة.",
+menu: [
+{ item: "طبق الإنتركوت مع الصوص السري والبطاطس", price: "240 ريال" },
+{ item: "سلطة الجوز والجبن الفرنسي", price: "55 ريال" },
+{ item: "بروفيتارول بالشوكولاتة الساخنة", price: "65 ريال" },
+{ item: "كريم بروليه الفانيلا", price: "50 ريال" }
+]
+},
+
+{
+id: "berenjak",
+type: "restaurant",
+name: "مطعم بيرنجاك (Berenjak)",
+category: "المطبخ الإيراني والشرقي",
+city: "جدة",
+image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=80",
+desc: "تجربة طعام فاخرة تجمع الأصالة الشامية والإيرانية والمشاوي المحضرة على الفحم بأسلوب استثنائي في جدة.",
+menu: [
+{ item: "كباب كبيدة إيراني فاخر", price: "115 ريال" },
+{ item: "جوجه كباب بالدجاج والزعفران", price: "95 ريال" },
+{ item: "أرز بالمكسرات والزعفران والزرشك", price: "40 ريال" },
+{ item: "تشكيلة المقبلات الإيرانية المشكلة", price: "60 ريال" }
+]
+},
+
+{
+id: "toki",
+type: "restaurant",
+name: "مطعم توكي (Toki)",
+category: "المطبخ الآسيوي الفاخر",
+city: "جدة",
+image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80",
+desc: "مطعم آسيوي فاخر بجدة يقدم أطباقاً صينية وآسيوية بأسلوب تقديم راقٍ وديكورات مذهلة.",
+menu: [
+{ item: "بط بكين المشوي المقرمش", price: "210 ريال" },
+{ item: "ديم سام بالجمبري والتروفل", price: "85 ريال" },
+{ item: "لحم بقر بصلصة الصويا والزنجبيل", price: "140 ريال" },
+{ item: "أرز مقلي مع الخضار والجمبري", price: "65 ريال" }
+]
+},
+
+{
+id: "nozomi",
+type: "restaurant",
+name: "مطعم نوزومي (Nozomi)",
+category: "المطبخ الياباني الحديث",
+city: "الخبر",
+image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=800&auto=format&fit=crop&q=80",
+desc: "وجهة حائزة على جوائز عالمية في تقديم السوشي والطهي الياباني المعاصر بأجواء موسيقية وراقية في الخبر.",
+menu: [
+{ item: "طبق السوشي والرول المشكل VIP", price: "195 ريال" },
+{ item: "واغيو ستيك ياباني على الحجر الساخن", price: "310 ريال" },
+{ item: "دجاج الترياكي الفاخر", price: "110 ريال" },
+{ item: "مشروب موهيتو نوزومي الخاص", price: "45 ريال" }
+]
+},
+
+{
+id: "sanbok",
+type: "restaurant",
+name: "مطعم السنبوك (Al Sanbok)",
+category: "المأكولات البحرية الفاخرة",
+city: "الدمام",
+image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&auto=format&fit=crop&q=80",
+desc: "أعرق وأفخم مطعم بحري على الكورنيش، متخصص بتجهيز الطازج من الأسماك والاستاكوزا والروبيان.",
+menu: [
+{ item: "طبق الاستاكوزا المشوية بالزبدة والثوم", price: "280 ريال" },
+{ item: "شوربة المأكولات البحرية الملكية", price: "70 ريال" },
+{ item: "سمك هامور مشوي بالطريقة الشرقية", price: "160 ريال" },
+{ item: "روبيان جامبو مقلي بالتيمبورا", price: "135 ريال" }
+]
+},
+
+{
+id: "matcha-patisserie",
+type: "dessert",
+name: "ماتشا وباتيسري (Matcha & Patisserie)",
+category: "مخبوزات فاخرة وقهوة مختصة",
+city: "الرياض",
+image: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=800&auto=format&fit=crop&q=80",
+desc: "مخبز ومقهى حلى سعودي بامتياز يقع في قلب الرياض، متخصص بتحضير الحلويات والمخبوزات الفاخرة يومياً مع الماتشا والقهوة المختصة.",
+menu: [
+{ item: "كيكة العسل بالزعفران والتمر", price: "48 ريال" },
+{ item: "تارت الفستق الحلبي الطازج", price: "52 ريال" },
+{ item: "ماتشا باردة مع حليب اللوز", price: "36 ريال" },
+{ item: "كرواسون الشوكولاتة البلجيكية", price: "28 ريال" }
+]
+},
+
+{
+id: "breadville-jeddah",
+type: "dessert",
+name: "كافيه ومخبز بريد فيل (Breadville)",
+category: "حلى وقهوة وفطور راقٍ",
+city: "جدة",
+image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop&q=80",
+desc: "علامة سعودية شهيرة في جدة تجمع بين جمال التصميم العصري وتقديم أشهى أصناف الحلى المبتكرة والقهوة السعودية والمختصة.",
+menu: [
+{ item: "فرنش توست بالكراميل المملح والمكسرات", price: "58 ريال" },
+{ item: "كيكة التاكو بالشوكولاتة والغزل", price: "46 ريال" },
+{ item: "سبانيش لاتيه بارد", price: "32 ريال" },
+{ item: "وافل بلجيكي بالفواكه الطازجة", price: "42 ريال" }
+]
+},
+
+{
+id: "overjar-khobar",
+type: "dessert",
+name: "أوفر جَار كافيه (Over Jar Cafe)",
+category: "مطعم حلى وشوكولاتة فاخرة",
+city: "الخبر",
+image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=800&auto=format&fit=crop&q=80",
+desc: "وجهة الحلى الشهيرة في المنطقة الشرقية والمتخصصة بتقديم الشوكولاتة والحلويات الفاخرة مع القهوة.",
+menu: [
+{ item: "برطمان الشوكولاتة البلجيكية مع البراونيز", price: "54 ريال" },
+{ item: "كيكة الحليب بالهيل", price: "42 ريال" },
+{ item: "قهوة سعودية فاخرة بالهيل", price: "45 ريال" },
+{ item: "كريب الشوكولاتة مع الأيسكريم", price: "38 ريال" }
+]
+}
+];
+
+let currentSelectedPlace = null;
+
+/* =====================================================
+BOOKING PACKAGES
+=====================================================*/
+const bookingPackages = {
+family: {
+name: "باقة العوائل VIP",
+shortName: "العوائل VIP",
+price: 200
+},
+vip: {
+name: "باقة كبار الشخصيات",
+shortName: "كبار الشخصيات",
+price: 300
+},
+terrace: {
+name: "باقة التراس والجلسات الخارجية",
+shortName: "التراس والجلسات الخارجية",
+price: 150
+}
+};
+
+let selectedBookingPackage = "family";
+
+/* =====================================================
+RENDER PLACES
+=====================================================*/
+function renderAllLists() {
+const restContainer =
+document.getElementById("restaurantsContainer");
+const dessertContainer =
+document.getElementById("dessertsContainer");
+const featured =
+document.getElementById("homeFeaturedRestaurants");
+
+if (restContainer)
+restContainer.innerHTML = "";
+if (dessertContainer)
+dessertContainer.innerHTML = "";
+if (featured)
+featured.innerHTML = "";
+
+places.forEach((place, index) => {
+
+const cardHTML = `
+<div class="card">
+<img
+src="${place.image}"
+alt="${place.name}"
+loading="lazy">
+<div class="card-body">
+<span class="card-badge">
+📍 ${place.city}
+</span>
+<h3>
+${place.name}
+</h3>
+<p>
+${place.desc.substring(0, 100)}...
+</p>
+<button
+class="main-btn"
+style="width:100%; margin-top:auto;"
+onclick="openPlaceDetail('${place.id}')">
+عرض المنيو والحجز 🍽️
+</button>
+</div>
+</div>
+`;
+
+if (
+place.type === "restaurant" &&
+restContainer
+) {
+restContainer.innerHTML += cardHTML;
+}
+
+if (
+place.type === "dessert" &&
+dessertContainer
+) {
+dessertContainer.innerHTML += cardHTML;
+}
+
+if (
+featured &&
+index < 3
+) {
+featured.innerHTML += cardHTML;
+}
+});
+}
+
+/* =====================================================
+CITIES
+=====================================================*/
+function renderCities() {
+const cities =
+[...new Set(places.map(place => place.city))];
+const container =
+document.getElementById("citiesContainer");
+
+if (!container) return;
+
+container.innerHTML = "";
+
+cities.forEach(city => {
+const count =
+places.filter(
+place => place.city === city
+).length;
+
+container.innerHTML += `
+<div
+class="card card-body"
+style="text-align:center;">
+<span
+class="card-badge"
+style="margin:0 auto 10px;">
+مدينة سعودية
+</span>
+<h3>
+مدينة ${city}
+</h3>
+<p>
+يوجد ${count}
+مطاعم ومقاهي فاخرة للحجز
+</p>
+<button
+class="main-btn"
+onclick="filterByCity('${city}')">
+تصفح أماكن ${city}
+</button>
+</div>
+`;
+});
+}
+
+function filterByCity(cityName) {
+showPage("restaurantsPage");
+}
+
+/* =====================================================
+OPEN PLACE
+=====================================================*/
+function openPlaceDetail(placeId) {
+const place =
+places.find(
+p => p.id === placeId
+);
+
+if (!place) return;
+
+currentSelectedPlace = place;
+
+document.getElementById(
+"restHeaderCard"
+).innerHTML = `
+<img
+src="${place.image}"
+class="rest-banner"
+alt="${place.name}">
+<div class="rest-header-content">
+<span class="card-badge">
+📍 ${place.city}
+•
+${place.category}
+</span>
+<h1>
+${place.name}
+</h1>
+<p style="color:#827970;">
+${place.desc}
+</p>
+</div>
+`;
+
+const menuGrid =
+document.getElementById(
+"menuItemsGrid"
+);
+
+menuGrid.innerHTML = "";
+
+place.menu.forEach(item => {
+menuGrid.innerHTML += `
+<div class="menu-card-item">
+<h4>
+• ${item.item}
+</h4>
+<span>
+${item.price}
+</span>
+</div>
+`;
+});
+
+document.getElementById(
+"inlineGuestName"
+).value = "";
+
+document.getElementById(
+"inlineGuestPhone"
+).value = "";
+
+document.getElementById(
+"inlineGuestCount"
+).value = 2;
+
+chooseBookingPackage(
+selectedBookingPackage
+);
+
+updateBookingSummary();
+
+showPage(
+"restaurantDetailPage"
+);
+}
+
+/* =====================================================
+PACKAGE SELECTION
+=====================================================*/
+function selectPackageAndBrowse(packageKey) {
+if (!bookingPackages[packageKey])
+return;
+
+selectedBookingPackage =
+packageKey;
+
+showPage(
+"restaurantsPage"
+);
+}
+
+function chooseBookingPackage(packageKey) {
+if (!bookingPackages[packageKey])
+return;
+
+selectedBookingPackage =
+packageKey;
+
+document
+.querySelectorAll(
+".booking-package-option"
+)
+.forEach(option => {
+option.classList.remove(
+"active"
+);
+});
+
+const selectedButton =
+document.getElementById(
+"package-" + packageKey
+);
+
+if (selectedButton) {
+selectedButton.classList.add(
+"active"
+);
+}
+
+updateBookingSummary();
+}
+
+/* =====================================================
+GUEST COUNT
+=====================================================*/
+function changeGuests(amount) {
+const input =
+document.getElementById(
+"inlineGuestCount"
+);
+
+if (!input) return;
+
+let guests =
+parseInt(input.value) || 1;
+
+guests += amount;
+
+if (guests < 1)
+guests = 1;
+
+input.value =
+guests;
+
+calculateInlineTotal();
+}
+
+/* =====================================================
+PRICE CALCULATION
+=====================================================*/
+function calculateInlineTotal() {
+const input =
+document.getElementById(
+"inlineGuestCount"
+);
+
+if (!input)
+return 0;
+
+let guests =
+parseInt(input.value) || 1;
+
+if (guests < 1) {
+guests = 1;
+input.value = 1;
+}
+
+const packageData =
+bookingPackages[
+selectedBookingPackage
+];
+
+if (!packageData)
+return 0;
+
+const total =
+packageData.price * guests;
+
+updateBookingSummary();
+
+return total;
+}
+
+/* =====================================================
+SUMMARY
+=====================================================*/
+function updateBookingSummary() {
+const guestInput =
+document.getElementById(
+"inlineGuestCount"
+);
+
+if (!guestInput)
+return;
+
+let guests =
+parseInt(
+guestInput.value
+) || 1;
+
+if (guests < 1)
+guests = 1;
+
+const packageData =
+bookingPackages[
+selectedBookingPackage
+];
+
+if (!packageData)
+return;
+
+const total =
+packageData.price * guests;
+
+const packageName =
+document.getElementById(
+"selectedPackageName"
+);
+
+const packagePrice =
+document.getElementById(
+"selectedPackagePrice"
+);
+
+const guestSummary =
+document.getElementById(
+"summaryGuestCount"
+);
+
+const totalElement =
+document.getElementById(
+"inlineTotalPrice"
+);
+
+if (packageName) {
+packageName.textContent =
+packageData.shortName;
+}
+
+if (packagePrice) {
+packagePrice.textContent =
+packageData.price.toLocaleString(
+"ar-SA"
+) + " ريال";
+}
+
+if (guestSummary) {
+guestSummary.textContent =
+guests;
+}
+
+if (totalElement) {
+totalElement.textContent =
+total.toLocaleString(
+"ar-SA"
+) + " ريال";
+}
+}
+
+/* =====================================================
+CREATE TICKET
+=====================================================*/
+function createInlineTicket() {
+if (!currentSelectedPlace)
+return;
+
+const name =
+document.getElementById(
+"inlineGuestName"
+).value.trim();
+
+const phone =
+document.getElementById(
+"inlineGuestPhone"
+).value.trim();
+
+const date =
+document.getElementById(
+"inlineCheckInDate"
+).value;
+
+const time =
+document.getElementById(
+"inlineCheckInTime"
+).value;
+
+const guests =
+parseInt(
+document.getElementById(
+"inlineGuestCount"
+).value
+) || 0;
+
+if (
+!name ||
+!phone ||
+!date ||
+!time ||
+guests < 1
+) {
+alert(
+"يرجى إكمال جميع بيانات الحجز أولاً."
+);
+return;
+}
+
+const packageData =
+bookingPackages[
+selectedBookingPackage
+];
+
+const total =
+packageData.price * guests;
+
+const bookingNum =
+"NK-" +
+Math.floor(
+100000 +
+Math.random() * 900000
+);
+
+document.getElementById(
+"ticketBookingNumber"
+).textContent =
+bookingNum;
+
+document.getElementById(
+"ticketName"
+).textContent =
+name;
+
+document.getElementById(
+"ticketRestaurant"
+).textContent =
+currentSelectedPlace.name;
+
+document.getElementById(
+"ticketCity"
+).textContent =
+currentSelectedPlace.city;
+
+document.getElementById(
+"ticketPackage"
+).textContent =
+packageData.name;
+
+document.getElementById(
+"ticketPersonPrice"
+).textContent =
+packageData.price.toLocaleString(
+"ar-SA"
+) + " ريال / شخص";
+
+document.getElementById(
+"ticketDate"
+).textContent =
+date;
+
+document.getElementById(
+"ticketTime"
+).textContent =
+time;
+
+document.getElementById(
+"ticketGuests"
+).textContent =
+guests + " أشخاص";
+
+document.getElementById(
+"ticketPhone"
+).textContent =
+phone;
+
+document.getElementById(
+"ticketTotal"
+).textContent =
+total.toLocaleString(
+"ar-SA"
+) + " ريال";
+
+showPage(
+"ticketPage"
+);
+}
+
+/* =====================================================
+ON LOAD
+=====================================================*/
+window.onload = function() {
+const dateInput =
+document.getElementById(
+"inlineCheckInDate"
+);
+
+if (dateInput) {
+const today =
+new Date()
+.toISOString()
+.split("T")[0];
+
+dateInput.min =
+today;
+}
+
+renderAllLists();
+renderCities();
+updateBookingSummary();
+};
+</script>
+</body>
+</html>
